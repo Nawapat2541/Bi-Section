@@ -2,7 +2,7 @@ def bi_section(func, a, b, tol, n_max):
     n = 1
     c = (a + b) / 2
     diff = abs(b - a)
-    relative_c_change = 2*tol
+    relative_c_change = 2 * tol
     temp_c = a
 
     def f(x):
@@ -16,8 +16,7 @@ def bi_section(func, a, b, tol, n_max):
                 print("Relative change is out of limit!")
                 quit()
 
-
-        relative_c_change = abs(temp_c-c)/abs(c)
+        relative_c_change = abs(temp_c - c) / abs(c)
         temp_c = a
         c = (a + b) / 2
 
