@@ -9,10 +9,13 @@ def bi_section(func, a, b, tol, n_max):
         f = eval(func)
         return f
 
-    while abs(f(c)) > tol and n_max > n:
+    while True:
         if n >= 2:
+            # print(end='')
             if relative_c_change <= tol:
-                break
+                print("Relative change is out of limit!")
+                quit()
+
 
         relative_c_change = abs(temp_c-c)/abs(c)
         temp_c = a
@@ -30,14 +33,18 @@ def bi_section(func, a, b, tol, n_max):
         else:
             print("Something wrong")
 
-        print(f"The relative change is {relative_c_change}")
-        print(f"The error is {diff}, the iteration round#{n}")
-        print(f"The lower boundary is {a} and the upper boundary is {b}")
+        print(f"The relative change is {relative_c_change}.")
+        print(f"The error is {diff}, the iteration round#{n}.")
+        print(f"The lower boundary is {a} and the upper boundary is {b}.")
         n = n + 1
         print("------------------------------------------------------------")
 
-    if n_max < n:
+    if n_max <= n:
         print("Out of iteration limit!")
+        quit()
+
+    if abs(f(c)) <= tol:
+        print("tolerance is out of limit!")
         quit()
 
     return c
