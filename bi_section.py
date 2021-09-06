@@ -37,15 +37,15 @@ def bi_section(func, a, b, tol, n_max):
         print(f"The lower boundary is {a} and the upper boundary is {b}.")
         print("------------------------------------------------------------")
 
-    if n_max <= n:
-        print("Out of iteration limit!")
+        if n_max <= n:
+            print("Out of iteration limit!")
         exit()
 
-    if abs(f(c)) <= tol:
-        print("tolerance is out of limit!")
-        exit()
+        if abs(f(c)) <= tol:
+            print("tolerance is out of limit!")
+            exit()
 
-    n = n + 1
+        n = n + 1
 
     return c
 
