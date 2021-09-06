@@ -1,15 +1,16 @@
 def bi_section(func, a, b, tol, n_max):
-    if b < a:
-        b = a
+    def f(x):
+        f = eval(func)
+        return f
+
+    if b < a and f(a) * f(b) < 0:
+        exit()
+
     n = 1
     c = (a + b) / 2
     diff = abs(b - a)
     relative_c_change = 2 * tol
     temp_c = a
-
-    def f(x):
-        f = eval(func)
-        return f
 
     while True:
         if n >= 2:
