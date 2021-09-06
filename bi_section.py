@@ -35,7 +35,6 @@ def bi_section(func, a, b, tol, n_max):
         print(f"The relative change is {relative_c_change}.")
         print(f"The error is {diff}, the iteration round#{n}.")
         print(f"The lower boundary is {a} and the upper boundary is {b}.")
-        n = n + 1
         print("------------------------------------------------------------")
 
     if n_max <= n:
@@ -45,6 +44,8 @@ def bi_section(func, a, b, tol, n_max):
     if abs(f(c)) <= tol:
         print("tolerance is out of limit!")
         quit()
+
+    n = n + 1
 
     return c
 
