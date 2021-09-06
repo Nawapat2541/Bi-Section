@@ -51,7 +51,7 @@ def bi_section(func, a, b, tol, n_max):
 
 try:
     t = bi_section("(x**3)+(-6*x**2)+(11*x)+(-6)", 2.5, 4, 0.001, 1000)
-    print("the root of a polynomial = ", t)
+    print(f"the root of a polynomial = {t}")
 except NameError:
     print("An exception occurred")
 
