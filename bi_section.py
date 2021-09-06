@@ -3,9 +3,6 @@ def bi_section(func, a, b, tol, n_max):
         f = eval(func)
         return f
 
-    if b < a and f(a) * f(b) < 0:
-        exit()
-
     n = 1
     c = (a + b) / 2
     diff = abs(b - a)
