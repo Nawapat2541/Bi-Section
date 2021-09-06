@@ -1,4 +1,6 @@
 def bi_section(func, a, b, tol, n_max):
+    if b < a:
+        b = a
     n = 1
     c = (a + b) / 2
     diff = abs(b - a)
