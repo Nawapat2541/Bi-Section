@@ -16,7 +16,7 @@ def bi_section(func, a, b, tol, n_max):
             # print(end='')
             if relative_c_change <= tol:
                 print("Relative change is out of limit!")
-                quit()
+                exit()
 
         relative_c_change = abs(temp_c - c) / abs(c)
         temp_c = a
@@ -41,11 +41,11 @@ def bi_section(func, a, b, tol, n_max):
 
     if n_max <= n:
         print("Out of iteration limit!")
-        quit()
+        exit()
 
     if abs(f(c)) <= tol:
         print("tolerance is out of limit!")
-        quit()
+        exit()
 
     n = n + 1
 
