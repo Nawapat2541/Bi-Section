@@ -8,7 +8,7 @@ def bi_section(func, a, b, tol, n_max):
     diff = abs(b - a)
     temp_c = a
 
-    rela_cond, abs_fc_cond, iter_cond = False, False, False
+    relative_cond, abs_fc_cond, iter_cond = False, False, False
 
     while True:
 
@@ -38,7 +38,7 @@ def bi_section(func, a, b, tol, n_max):
             # print(end='')
             if relative_c_change <= tol:
                 print("Relative change is out of limit!")
-                rela_cond = True
+                relative_cond = True
 
         if n_max <= n:
             print("Out of iteration limit!")
@@ -48,7 +48,7 @@ def bi_section(func, a, b, tol, n_max):
             print("tolerance is out of limit!")
             abs_fc_cond = True
 
-        if rela_cond or abs_fc_cond or iter_cond:
+        if relative_cond or abs_fc_cond or iter_cond:
             return c
 
         n = n + 1
