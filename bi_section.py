@@ -49,7 +49,7 @@ def bi_section(func, a, b, tol, n_max):
             abs_fc_cond = True
 
         if rela_cond or abs_fc_cond or iter_cond:
-            exit()
+            return c
 
         n = n + 1
 
